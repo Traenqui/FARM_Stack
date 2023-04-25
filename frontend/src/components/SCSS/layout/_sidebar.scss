@@ -1,0 +1,256 @@
+.sidebar {
+    background-color: var(--nord3);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 2rem 0.5rem;
+    width: 15rem;
+    height: 100vh;
+    transition: 0.5s all;
+
+    .logoContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        h2.title {
+            color: var(--nord7);
+            padding: 0 0 0 1rem;
+        }
+
+        .logo {
+            font-size: 50px;
+        }
+    }
+
+    .burgerContainer {
+        content: "";
+        background-color: var(--nord7);
+        position: absolute;
+        right: -17.5px;
+        top: calc(9rem / 1.15);
+        width: 35px;
+        height: 35px;
+        border-radius: 2rem;
+        z-index: 1;
+
+        .burgerTrigger {
+            content: "";
+            width: 35px;
+            height: 35px;
+            background-color: red;
+            cursor: pointer;
+            z-index: 6;
+            opacity: 0;
+            position: relative;
+        }
+
+        .burgerMenu {
+            content: "";
+            background-color: var(--nord7);
+            position: relative;
+            z-index: 1;
+            width: 20px;
+            height: 3px;
+            border-radius: 2rem;
+            bottom: 17.5px;
+            left: 0.45rem;
+            transition: 0.5s all;
+        }
+
+        .burgerMenu::after {
+            content: "";
+            background-color: var(--nord0);
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            border-radius: 2rem;
+            top: 0.4rem;
+            transform: translateY(-0.4rem) rotate(45deg);
+            transition: 0.5s all;
+        }
+
+        .burgerMenu::before {
+            content: "";
+            background-color: var(--nord0);
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            border-radius: 2rem;
+            top: -0.4rem;
+            transform: translateY(0.4rem) rotate(-45deg);
+            transition: 0.5s all;
+        }
+    }
+
+    .burgerContainer::after {
+        content: "";
+        position: absolute;
+        right: 35px;
+        top: 17.5px;
+        z-index: 0;
+        width: calc(6rem + 15rem);
+        background-color: var(--nord7);
+        height: 2px;
+        transition: 0.5s all;
+    }
+
+    .profileContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 3rem 0 0 0;
+
+        .profile {
+            font-size: 50px;
+        }
+
+        .profileContents {
+            padding: 0 0 0 1rem;
+
+            p.name {
+                padding: 0;
+                margin: 0;
+                text-transform: capitalize;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+                text-transform: lowercase;
+            }
+        }
+    }
+
+    .contentsContainer {
+        margin: 2rem 0 0 0;
+
+        ul {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            a {
+                width: 14rem;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: row;
+                margin: 0.25rem 0;
+                padding-left: 0.25rem;
+                border-radius: 1rem;
+                cursor: pointer;
+
+                .icon {
+                    font-size: 24px;
+                    color: var(--nord7);
+                    margin: 0 1rem 0 0.5rem;
+                }
+            }
+
+            a:hover {
+                background-color: var(--nord10);
+                transition: 0.25s;
+                width: 14rem;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: row;
+                margin: 0.75rem 0;
+                padding: 0.75rem 0;
+                width: 100%;
+                border-radius: 1rem;
+                cursor: pointer;
+
+                h4 {
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 0 0 0 0.5rem;
+                    transition: 0.5s;
+                }
+            }
+
+            li.active {
+                background-color: veryLightGreen;
+
+                a {
+                    color: var(--nord14);
+                }
+            }
+        }
+
+        
+    }
+}
+
+.dark .sidebar {
+    background-color: var(--nord0);
+}
+
+.sidebar.active {
+    width: 4rem;
+    transition: 0.5s all;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+
+    .logoContainer.active {
+        h2.title {
+            opacity: 0;
+        }
+
+        .logo {
+            font-size: 50px;
+        }
+    }
+
+    .burgerContainer.active {
+        transition: 0.5s all;
+        .burgerMenu {
+            background-color: var(--nord0);
+            transition: 0.5s all;
+        }
+
+        .burgerMenu::before {
+            transform: translateY(0rem) rotate(0deg);
+            transition: 0.5s all;
+        }
+
+        .burgerMenu::after {
+            transform: translateY(0rem) rotate(0deg);
+            transition: 0.5s all;
+        }
+    }
+
+    .profileContainer {
+        .profileContents {
+            opacity: 0;
+        }
+    }
+
+    .contentsContainer {
+        h4 {
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        a {
+            width: 3rem;
+        }
+
+        a:hover {
+            width: 3rem;
+        }
+    }
+}
+

@@ -1,0 +1,95 @@
+.no-border {
+	border: none;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.no-outline {
+	outline: none;
+}
+
+.noHover{
+    pointer-events: none;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.fill-height {
+	height: 100%;
+}
+
+.fill-wdith {
+	width: 100%;
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.ltr {
+	direction: ltr;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: var(--nord6);
+	transition-duration: var(--default--transition);
+	transition-property: color, background-color;
+	width: 100vw;
+  	height: 100vh;
+  	overflow: hidden;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: var(--nord7);
+}
+
+.container {
+	display: flex;
+}
+
+.page {
+	margin-left: var(--sidebar-width);
+	margin-top: 3rem;
+	width: calc(100% -  var(--sidebar-width));
+	transition: 0.5s all;
+	padding: 1rem 0 0 2rem;
+}

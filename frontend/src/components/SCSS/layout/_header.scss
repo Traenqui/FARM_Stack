@@ -1,0 +1,47 @@
+.header {
+	position: fixed;
+	background-color: var(--nord3);
+	margin-left: var(--sidebar-width);
+	width: calc(100% -  var(--sidebar-width));
+	transition: 0.5s all;
+	height: 3rem;
+}
+.header > div {
+	height: 100%;
+	align-content: center;
+}
+.header .logo {
+	max-width: 2em;
+	padding: 5px;
+}
+
+.header .nav-container {
+	list-style: none;
+	margin: 0 0 0 20px;
+	padding: 0;
+}
+.header .nav-container li {
+	float: left
+}
+.header .nav-container a {
+	color: white;
+	padding: 5px 10px
+}
+.header .header-link {
+	padding: 0 10px;
+	width: 35px
+}
+
+.dark .header {
+	background-color: var(--nord0);
+}
+
+.search {
+	padding-top: 5px;
+	padding-left: 2rem;
+}
+
+.icons {
+	padding-top: 5px;
+	padding-right: 1rem;
+}
